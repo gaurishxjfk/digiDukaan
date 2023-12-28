@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Cart from "@/components/Cart/Cart";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,13 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn('relative h-full font-sans antialiased',inter.className)}>
         <main className="relative flex flex-col min-h-screen ">
           <Navbar />
-          {/* <div className="absolute h-full w-full top-0 z-50 right-0 bg-white/30	backdrop-blur-sm ">
+          {/* <div className="absolute h-full w-full top-0 z-50 right-0 bg-white/30	backdrop-blur-sm flex-grow flex-1">
           </div>
           <Cart /> */}
-          <div className="flex-grow flex-1">{children}</div>
+          <div className='flex-grow flex-1'>{children}</div>
         </main>
       </body>
     </html>

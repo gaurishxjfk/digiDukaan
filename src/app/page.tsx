@@ -1,6 +1,6 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
-  ArrowDownLeft,
   ArrowDownToLine,
   CheckCircle,
   Leaf,
@@ -30,7 +30,7 @@ const perks = [
 export default function Home() {
   return (
     <>
-      <MaxWidthWrapper classNameProp={``}>
+      <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             Your marketplace for high-quality{" "}
@@ -42,13 +42,15 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-6 ">
             <Link
               href={"/products"}
-              className="bg-blue-500 text-white  px-4 py-2 rounded-md tracking-tight text-sm hover:bg-blue-400 transition-all ease-in-out delay-100 "
+              className={buttonVariants()}
             >
               Browse Trending
             </Link>
-            <button className="rounded-md bg-gray-200 px-4 py-2 tracking-tight text-sm hover:bg-gray-100 transition-all ease-in-out delay-100">
+
+            <Button 
+              variant="secondary">
               Our quality promise &rarr;
-            </button>
+            </Button>
           </div>
         </div>
         {
